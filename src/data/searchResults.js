@@ -1,0 +1,136 @@
+/** Extended catalog for the results page (mock search hits). */
+const collage = (seed) =>
+  `https://picsum.photos/seed/${seed}/300/450`;
+
+export const searchCatalog = [
+  {
+    id: 'animal',
+    type: 'movie',
+    title: 'Animal',
+    imdbRating: 6.7,
+    year: 2023,
+    runtime: '3h 21m',
+    genres: ['Action'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('animal-2023'),
+    overview:
+      'The hardened son of a powerful industrialist returns home and unleashes a violent campaign against those who wronged his family.',
+  },
+  {
+    id: 'tjmm',
+    type: 'movie',
+    title: 'Tu Jhoothi Main Makkaar',
+    imdbRating: 6.6,
+    year: 2023,
+    runtime: '2h 39m',
+    genres: ['Romance'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('tjmm-2023'),
+    overview:
+      'A love broker and a serial monogamist play games of the heart until their own rules begin to collapse.',
+  },
+  {
+    id: 'brahmastra',
+    type: 'movie',
+    title: 'Brahmāstra: Part One – Shiva',
+    imdbRating: 5.6,
+    year: 2022,
+    runtime: '2h 48m',
+    genres: ['Fantasy'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('brahmastra'),
+    overview:
+      'A young man discovers his connection to an ancient secret society and a weapon of infinite power.',
+  },
+  {
+    id: 'shamshera',
+    type: 'movie',
+    title: 'Shamshera',
+    imdbRating: 5.0,
+    year: 2022,
+    runtime: '2h 36m',
+    genres: ['Action'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('shamshera'),
+    overview:
+      'In the 1800s, a dacoit tribe fights for their rights against the British and a ruthless officer.',
+  },
+  {
+    id: 'rocket-singh',
+    type: 'movie',
+    title: 'Rocket Singh: Salesman of the Year',
+    imdbRating: 7.5,
+    year: 2022,
+    runtime: '2h 34m',
+    genres: ['Drama'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('rocket-singh'),
+    overview:
+      'A fresh graduate builds an ethical sales team inside a cutthroat corporation.',
+  },
+  {
+    id: 'sanju',
+    type: 'movie',
+    title: 'Sanju',
+    imdbRating: 7.2,
+    year: 2020,
+    runtime: '2h 40m',
+    genres: ['Drama'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('sanju'),
+    overview:
+      'Biographical drama tracing the turbulent life of actor Sanjay Dutt.',
+  },
+  {
+    id: 'ae-dil',
+    type: 'movie',
+    title: 'Ae Dil Hai Mushkil',
+    imdbRating: 6.4,
+    year: 2021,
+    runtime: '2h 38m',
+    genres: ['Romance', 'Drama'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('ae-dil'),
+    overview:
+      'Complex relationships unfold between friends who want different kinds of love.',
+  },
+  {
+    id: 'bachna',
+    type: 'movie',
+    title: 'Bachna Ae Haseeno',
+    imdbRating: 6.9,
+    year: 2020,
+    runtime: '2h 29m',
+    genres: ['Romance'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('bachna'),
+    overview:
+      'A charming playboy revisits the women he once loved to make amends.',
+  },
+  {
+    id: 'yeh-jawaani',
+    type: 'movie',
+    title: 'Yeh Jawaani Hai Deewani',
+    imdbRating: 7.2,
+    year: 2023,
+    runtime: '2h 40m',
+    genres: ['Romance', 'Drama'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('yjhd'),
+    overview:
+      'Friends reunite on a trek and confront the choices that shaped their adult lives.',
+  },
+  {
+    id: 'tamasha',
+    type: 'movie',
+    title: 'Tamasha',
+    imdbRating: 7.4,
+    year: 2021,
+    runtime: '2h 19m',
+    genres: ['Drama', 'Romance'],
+    actors: ['Ranbir Kapoor'],
+    posterUrl: collage('tamasha'),
+    overview:
+      'A man rediscovers his authentic self after years of performing roles society expects.',
+  },
+];

@@ -10,7 +10,14 @@ const CATEGORIES = [
 ];
 
 const RATING_OPTIONS = [2, 3, 4, 5, 6, 7, 8];
-const YEAR_OPTIONS = [2024, 2023, 2022, 2021, 2020];
+const YEAR_OPTIONS = [
+  { id: 'range-2020-2024', label: '2020 - 2024', yearFrom: 2020, yearTo: 2024 },
+  { id: 'y2024', label: '2024', year: 2024 },
+  { id: 'y2023', label: '2023', year: 2023 },
+  { id: 'y2022', label: '2022', year: 2022 },
+  { id: 'y2021', label: '2021', year: 2021 },
+  { id: 'y2020', label: '2020', year: 2020 },
+];
 
 function RadioRow({ label, checked, onSelect }) {
   return (
@@ -52,6 +59,8 @@ export default function FilterModal({ open, appliedFilters, onClose, onApply }) 
       actor: null,
       genre: null,
       year: null,
+      yearFrom: null,
+      yearTo: null,
     });
   };
 
@@ -89,14 +98,48 @@ export default function FilterModal({ open, appliedFilters, onClose, onApply }) 
       ));
     }
     if (category === 'year') {
-      return YEAR_OPTIONS.map((y) => (
-        <RadioRow
-          key={y}
-          label={String(y)}
-          checked={draft.year === y}
-          onSelect={() => setField('year', draft.year === y ? null : y)}
-        />
-      ));
+      return YEAR_OPTIONS.map((opt) => {
+        const rangeActive =
+          opt.yearFrom != null &&
+          draft.yearFrom === opt.yearFrom &&
+          draft.yearTo === opt.yearTo;
+        const yearActive = opt.year != null && draft.year === opt.year;
+        const checked = rangeActive || yearActive;
+
+        return (
+          <RadioRow
+            key={opt.id}
+            label={opt.label}
+            checked={checked}
+            onSelect={() => {
+              if (checked) {
+                setDraft((prev) => ({
+                  ...prev,
+                  year: null,
+                  yearFrom: null,
+                  yearTo: null,
+                }));
+                return;
+              }
+              if (opt.yearFrom != null) {
+                setDraft((prev) => ({
+                  ...prev,
+                  year: null,
+                  yearFrom: opt.yearFrom,
+                  yearTo: opt.yearTo,
+                }));
+              } else {
+                setDraft((prev) => ({
+                  ...prev,
+                  year: opt.year,
+                  yearFrom: null,
+                  yearTo: null,
+                }));
+              }
+            }}
+          />
+        );
+      });
     }
     return null;
   };
